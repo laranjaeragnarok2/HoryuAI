@@ -167,6 +167,22 @@ async def recom_filmes(ctx):
 
     await ctx.send("Recomendações enviadas com sucesso! Continue assim!")
 
+@bot.command(name="readme")
+async def readme(ctx):
+    """Envia o conteúdo do README.md no canal."""
+    try:
+        # Abre o arquivo e lê o conteúdo
+        with open("README.md", "r", encoding="utf-8") as f:
+            content = f.read()
+        # Se o conteúdo exceder o limite (2000 caracteres), envia em partes
+        if len(content) < 2000:
+            await ctx.send(f"```markdown\n{content}\n```")
+        else:
+            for i in range(0, len(content), 1900):
+                await ctx.send(f"```markdown\n{content[i:i+1900]}\n```")
+    except Exception as e:
+        await ctx.send(f"Erro ao ler o README.md: {e}")
+
 # Rodar o bot
 if DISCORD_BOT_TOKEN:
     bot.run(DISCORD_BOT_TOKEN)
