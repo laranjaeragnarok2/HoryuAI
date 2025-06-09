@@ -1,0 +1,48 @@
+# Bot Discord com Integração Gemini
+
+## Descrição
+Este projeto consiste em um bot para o Discord que integra a API Gemini para gerar conteúdos dinâmicos. O bot enviará recomendações de filmes com imagens, sinopses e reviews, tanto por comando quanto por tarefas agendadas (news semanais). Além disso, o bot também possui comandos administrativos, como kick e ban.
+
+## Funcionalidades
+- **Envio automático de news:** Uma tarefa agendada que envia, semanalmente, recomendações de filmes no canal definido.
+- **Geração de imagem:** Comando `!imagem` que utiliza a API Gemini para gerar imagens a partir de prompts.
+- **Recomendações de filmes:** Comando `!recom_filmes` que envia embeds organizados com recomendações de filmes (título, ano, sinopse, review e imagem).
+- **Comandos de moderação:** Comandos `!kick` e `!ban` para gerenciamento de membros.
+
+## Tecnologias Utilizadas
+- Python 3.x
+- discord.py (para interação com a API do Discord)
+- google.generativeai (Integração com API Gemini)
+- python-dotenv (para gerenciar variáveis de ambiente)
+
+## Instalação
+1. **Clone o Repositório:**
+   ```bash
+   git clone https://github.com/SeuUsuario/SeuProjeto.git
+   cd SeuProjeto
+   ```
+
+2. **Instale as Dependências:**
+   ```bash
+   pip install -r requirements.txt
+   ```
+   *Certifique-se de que as dependências estão listadas no arquivo `requirements.txt` (por exemplo, discord.py, python-dotenv, google-generativeai, etc.).*
+
+3. **Configure as Variáveis de Ambiente:**
+   Crie um arquivo `.env` na raiz do projeto com o seguinte conteúdo:
+   ```env
+   DISCORD_BOT_TOKEN=seu_token_do_discord
+   GEMINI_API_KEY=sua_chave_api_gemini
+   ```
+
+4. **Execute o Bot:**
+   ```bash
+   python horyuai.py
+   ```
+   *Ou use o comando `py horyuai.py` se preferir usar o Python Launcher.*
+
+## Contribuição
+Pull requests são bem-vindos. Para alterações de grande porte, abra uma issue primeiro para discutir as mudanças.
+
+## Licença
+Este projeto está licenciado sob os termos da licença MIT.
